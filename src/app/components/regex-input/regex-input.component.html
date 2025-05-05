@@ -1,0 +1,85 @@
+<div class="container mt-4">
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="regexPattern" class="form-label">Regex Pattern</label>
+      <input 
+        type="text" 
+        id="regexPattern"
+        class="form-control mb-2" 
+        placeholder="Enter regex pattern" 
+        [(ngModel)]="regexPattern" 
+        (input)="sanitizeInput('regexPattern')"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="testString" class="form-label">Test String</label>
+      <input 
+        type="text" 
+        id="testString"
+        class="form-control mb-2" 
+        placeholder="Enter test string" 
+        [(ngModel)]="testString" 
+        (input)="sanitizeInput('testString')"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col text-center">
+      <button class="btn btn-primary" (click)="validateAndTest()">Test Regex</button>
+    </div>
+  </div>
+
+  <div class="row mb-3" *ngIf="regexPattern">
+    <div class="col text-center">
+        <h5 class="mb-0">📊 Regex Visualization</h5>
+        <a 
+          *ngIf="regexPattern" 
+          [href]="getVisualizationUrl()" 
+          target="_blank" 
+          class="btn btn-info">
+          Open Visualization
+        </a>
+    </div>
+  </div>
+ 
+  <div *ngIf="matches" class="card mb-3">
+    <div class="card-header bg-success text-white">
+      <h5 class="mb-0">🔍 Matches</h5>
+    </div>
+    <div class="card-body">
+      <p>{{ matches }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="matches && examples" class="card mb-3">
+    <div class="card-header bg-info text-white">
+      <h5 class="mb-0">📋 Examples</h5>
+    </div>
+    <div class="card-body">
+      <p>{{ examples }}</p>
+    </div>
+  </div>
+
+
+  <div *ngIf="explanation" class="card mb-3">
+    <div class="card-header bg-warning text-dark">
+      <h5 class="mb-0">🧠 Explanation</h5>
+    </div>
+    <div class="card-body">
+      <pre>{{ explanation }}</pre>
+    </div>
+  </div>
+
+  <div *ngIf="history.length > 0" class="card">
+    <div class="card-header bg-secondary text-white">
+      <h5 class="mb-0">🕘 History</h5>
+    </div>
+    <div class="card-body">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of history">
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

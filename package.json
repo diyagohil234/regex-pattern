@@ -1,0 +1,48 @@
+{
+  "name": "regex-tester-angular",
+  "version": "1.0.0",
+  "description": "An Angular tool for testing and understanding regular expressions with features like match highlighting, regex explanations, and history of past regex patterns.",
+  "main": "src/main.ts",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "~19.0.0",
+    "@angular/compiler": "^19.0.7",
+    "@angular/core": "~19.0.0",
+    "@angular/forms": "~19.0.0",
+    "@angular/material": "^19.2.11",
+    "@angular/platform-browser": "~19.0.0",
+    "@angular/platform-browser-dynamic": "~19.0.0",
+    "@angular/router": "^19.2.8",
+    "bootstrap": "^5.3.5",
+    "randexp": "^0.5.3",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "xregexp": "^5.1.2",
+    "zone.js": "~0.11.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^19.2.9",
+    "@angular/cli": "^19.2.8",
+    "@angular/compiler-cli": "~19.0.0",
+    "@types/jest": "^26.0.0",
+    "typescript": "^5.5.4"
+  },
+  "keywords": [
+    "regex",
+    "tester",
+    "angular",
+    "highlighting",
+    "explanation",
+    "history"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
